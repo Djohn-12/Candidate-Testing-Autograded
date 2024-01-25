@@ -24,21 +24,19 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  for (let q of questions){
-    console.log(q);
+  for (let i = 0 ; i < questions.length; i++){
+    console.log(questions[i]);
+    candidateAnswers[i] = input.question();
   }
 }
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswer === correctAnswer) {
-   console.log("Yes, " + candidateAnswer + " is correct!");
-    }
-    else {
-      console.log("No, the correct answer is " + correctAnswer + ".")
-    }
-       
+  console.log("\tCandidate's Responses:");
 
+  for (let i = 0; i < questions.length; i++) {
+    console.log(`${i + 1}. ${questions[i]}\n   Your Answer: "${candidateAnswers[i]}"\n   Correct Answer: "${correctAnswers[i]}"`);
+  }
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
 
